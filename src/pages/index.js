@@ -1,11 +1,15 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+
 import Layout from "../templates/layout"
+import SEO from "../components/seo"
+
 import Img from "gatsby-image"
 
 export default ({ data }) => {
   return (
     <Layout>
+      <SEO title="Learning to code on the internet" />
       <div className="articles-list">
         <h3>All articles</h3>
         {data.allMarkdownRemark.edges.map(({ node }) => (

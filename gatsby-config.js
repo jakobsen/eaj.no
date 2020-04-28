@@ -5,7 +5,21 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: `Erik André Jakobsen`,
+    description: `Erik André Jakobsen is a mathematician and web developer who learns in public.`,
+    author: `Erik André Jakobsen`,
+    keywords: [
+      `latex tutorial`,
+      `gatsby tutorial`,
+      `developer blog`,
+      `blog`,
+      `norsk blogg`,
+      `koding`,
+      `software`,
+    ],
+    siteUrl: `https://eaj.no`,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
