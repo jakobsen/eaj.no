@@ -7,6 +7,8 @@
 module.exports = {
   /* Your site config here */
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
