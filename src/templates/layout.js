@@ -8,11 +8,14 @@ export default ({ children }) => (
       <div className="nav-container">
         <div className="brand">
           <Link to="/">
-            <img src={logo} alt="" className="logo" /> Erik André Jakobsen
+            <img src={logo} alt="" className="logo" />{" "}
+            <h2>Erik André Jakobsen</h2>
           </Link>
         </div>
         <div className="links">
-          <Link to="/about">About</Link>
+          <Link to="/about">
+            <h3>About</h3>
+          </Link>
         </div>
       </div>
     </nav>
