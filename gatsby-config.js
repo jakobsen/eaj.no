@@ -6,5 +6,18 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Erik André Jakobsen`,
+        short_name: `eaj.no`,
+        start_url: `/`,
+        background_color: `#f0f0f0`,
+        theme_color: `#bb002d`,
+        display: `standalone`,
+        icon: `src/images/icon.png`,
+      },
+    },
+  ],
 }
