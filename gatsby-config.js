@@ -41,7 +41,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: `${__dirname}/content/`,
+        path: `${__dirname}/content/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/content/thumbnails`,
       },
     },
     {
@@ -70,13 +77,13 @@ module.exports = {
               inlineCodeMarker: `›`,
             },
           },
-          {
-            resolve: `gatsby-plugin-typography`,
-            options: {
-              pathToConfigModule: `src/utils/typography`,
-            },
-          },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
       },
     },
   ],
