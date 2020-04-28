@@ -21,6 +21,27 @@ module.exports = {
     siteUrl: `https://eaj.no`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`, // this entry has to be the first or will not work as per FAQ
+      options: {
+        path: `${__dirname}/static/assets`,
+        name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/posts`,
+        name: `posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/thumbnails`,
+        name: `thumbnails`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -35,20 +56,6 @@ module.exports = {
         theme_color: `#bb002d`,
         display: `standalone`,
         icon: `src/images/icon.png`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `src`,
-        path: `${__dirname}/content/posts`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `src`,
-        path: `${__dirname}/content/thumbnails`,
       },
     },
     {

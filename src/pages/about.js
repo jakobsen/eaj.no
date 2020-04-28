@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 export default () => {
   return (
     <Layout>
+      <SEO title="About Me" />
       <h1>About Me</h1>
       <p>Hey!</p>
       <p>
