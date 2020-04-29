@@ -1,0 +1,10 @@
+@import "./variables";
+
+@mixin layout-link {
+  color: rgba($text-color, 0.4);
+  fill: rgba($text-color, 0.4);
+  &:hover {
+    color: $text-color;
+    fill: $text-color;
+  }
+}

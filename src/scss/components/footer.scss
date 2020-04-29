@@ -1,0 +1,13 @@
+@import "../base/variables";
+@import "../base/mixins";
+footer {
+  display: flex;
+  padding: $container-padding;
+  footer-container {
+    flex: 0 1 $site-width;
+  }
+  svg {
+    @include layout-link;
+    width: 18px;
+  }
+}
