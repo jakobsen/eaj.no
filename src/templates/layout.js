@@ -1,32 +1,18 @@
 import React from "react"
-import { Link } from "gatsby"
-import logo from "../images/icon.png"
-import Github from "../images/github.svg"
+import Header from "../components/header"
+import Footer from "../components/footer"
+import "./normalize.css"
 
 export default ({ children }) => (
-  <>
-    <nav>
-      <div className="nav-container">
-        <div className="brand">
-          <Link to="/">
-            <img src={logo} alt="" className="logo" />{" "}
-            <h2>Erik André Jakobsen</h2>
-          </Link>
-        </div>
-        <div className="links">
-          <Link to="/about">
-            <h3>About</h3>
-          </Link>
-        </div>
-      </div>
-    </nav>
+  <div
+    style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+    className="site-wrapper"
+  >
+    <Header />
     <main>
       <div className="main-container">{children}</div>
     </main>
-    <footer>
-      <a href="https://github.com/jakobsen">
-        <Github />
-      </a>
-    </footer>
-  </>
+    <div style={{ flex: "1" }}></div>
+    <Footer />
+  </div>
 )
