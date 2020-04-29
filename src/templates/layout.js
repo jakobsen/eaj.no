@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import logo from "../images/icon.png"
+import Github from "../images/github.svg"
 
 export default ({ children }) => (
   <>
@@ -22,5 +23,10 @@ export default ({ children }) => (
     <main>
       <div className="main-container">{children}</div>
     </main>
+    <footer>
+      <a href="https://github.com/jakobsen">
+        <Github />
+      </a>
+    </footer>
   </>
 )
