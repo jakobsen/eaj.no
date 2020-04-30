@@ -1,15 +1,32 @@
 @import "../base/variables";
 
 header {
+  left: 0;
   width: 100%;
+  position: fixed;
+  background: #fff;
+  z-index: 1;
+  transition: all 0.2s linear;
+
+  &.scroll {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    nav {
+      height: 80px;
+      padding: 0 2rem;
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
   nav {
+    transition: all 0.2s linear;
+    margin: 0 30px;
     max-width: $site-width;
     height: 160px;
-    margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     h2 {
       display: inline-block;
       margin: 0;

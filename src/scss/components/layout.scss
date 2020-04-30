@@ -4,6 +4,12 @@ body {
   transition: all 0.2s linear;
 }
 
+main {
+  position: relative;
+  top: 190px;
+  left: 0;
+}
+
 .container {
   max-width: $site-width;
   margin-left: auto;
@@ -20,4 +26,9 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+footer {
+  position: relative;
+  top: 160px;
 }

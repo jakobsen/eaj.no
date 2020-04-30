@@ -10,6 +10,7 @@ class Header extends React.Component {
     super(props)
     const userLight = JSON.parse(localStorage.getItem("light"))
     this.handleClick = this.handleClick.bind(this)
+    this.handleScroll = this.handleScroll.bind(this)
     this.state = {
       darkMode: userLight ? false : true,
       imageSrc: sun,
@@ -19,12 +20,28 @@ class Header extends React.Component {
     }
   }
 
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll)
+  }
+
   handleClick() {
     this.setState({ darkMode: !this.state.darkMode })
     localStorage.setItem("light", JSON.stringify(this.state.darkMode))
     const body = document.querySelector("body")
     body.classList.toggle("dark")
     console.log(body.classList.contains("dark"))
+  }
+
+  handleScroll(e) {
+    const header = document.querySelector("header")
+    const threshold = 50
+    console.log(header)
+    if (window.scrollY >= threshold) {
+      header.classList.add("scroll")
+    }
+    if (window.scrollY < threshold) {
+      header.classList.remove("scroll")
+    }
   }
 
   render() {
