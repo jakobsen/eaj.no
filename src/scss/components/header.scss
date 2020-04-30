@@ -10,26 +10,9 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    h2,
-    h3 {
+    h2 {
       display: inline-block;
       margin: 0;
-    }
-
-    h3 {
-      font-size: 1.2rem;
-    }
-
-    .links {
-      a {
-        color: rgba($text-color, 0.5);
-        padding: 5px;
-        border-radius: 5px;
-        &:hover {
-          color: $text-color;
-          background-color: rgba($text-color, 0.1);
-        }
-      }
     }
     .brand {
       a {

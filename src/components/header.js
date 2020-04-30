@@ -13,11 +13,6 @@ export default () => {
             <h2>Erik André Jakobsen</h2>
           </Link>
         </div>
-        <div className="links">
-          <Link to="/about">
-            <h3>About</h3>
-          </Link>
-        </div>
       </nav>
     </header>
   )
