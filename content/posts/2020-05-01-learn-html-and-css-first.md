@@ -1,0 +1,30 @@
+---
+title: "Why you should learn plain HTML and CSS first"
+author: "Erik André Jakobsen"
+date: "2020-05-02"
+thumbnail: "../thumbnails/html5-logo.png"
+---
+
+This site is made using [Gatsby](https://gatsbyjs.org). It is a [static site generator](https://www.netlify.com/blog/2020/04/14/what-is-a-static-site-generator-and-3-ways-to-find-the-best-one/) based on [React](https://reactjs.org/), a Javascript library that is designed for building web applications. This allows me to write each article as a [Markdown](https://en.wikipedia.org/wiki/Markdown) file, a file format that is mostly plain text with a few simple syntax rules for specifying styles such as _italic_ text. This file is then compiled into HTML by Gatsby, so that I don't have to.
+
+Yet, I'm saying you should go through the trouble of learning HTML and CSS. If tools like Gatsby and React exist, why on earth would you do that?
+
+For one, using web frameworks don't absolve you of writing HTML and CSS. This is a snippet from the file that defines the header that is on every page of this site:
+
+```jsx
+<div className="brand">
+  <Link to="/">
+    <img src={logo} alt="" className="logo" /> <h2>Erik André Jakobsen</h2>
+  </Link>
+</div>
+```
+
+It isn't pure HTML—I use a variable for the image `src` for the logo, for instance—but just looking at this small snippet, you would be excused for thinking it is.
+
+The site is also styled using CSS. If you use the button in the top right corner to toggle between dark and light mode, all that happens is that a little bit of Javascript adds a `HTML›class="dark"` attribute to the `html›<body />`, changing a few of the colors. There is no Framework 'magic'.
+
+Next, frameworks aren't the end-all, be-all of the modern web. If all you need is a landing page for your small business or your friend's band, pulling out React would be like using a cannon to kill a bug. Sure, you _can_, but why go through all that trouble when you could achieve the same result using much simpler tools?
+
+Finally, having a good understanding of HTML and CSS will give you a much deeper understanding of what more advanced tools are actually doing. You'll probably get through the beginner tutorials for Gatsby without a lot of knowledge of how CSS works, but you'll be copy-and-pasting a lot of code that you don't understand.
+
+So how do you go about learning it? Personally I have enjoyed the tutorials by Brad Traversy on [Udemy](https://www.udemy.com/), as well as the online course by [Codecademy](https://www.codecademy.com/). Don't just blindly go through them and then move on, however. **Make something!** When you are building something from scratch there is nowhere to hide, and no solution manual for when you don't understand something. If you want something to happen, you just have to figure it out, _really_ learning it in the process.
