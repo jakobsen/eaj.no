@@ -6,7 +6,7 @@ import "../scss/components/header.scss"
 export default () => {
   return (
     <header>
-      <nav>
+      <nav className="container">
         <div className="brand">
           <Link to="/">
             <img src={logo} alt="" className="logo" />{" "}
