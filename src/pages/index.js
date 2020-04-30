@@ -13,12 +13,12 @@ export default ({ data }) => {
       <h3>All articles</h3>
       <div className="articles-list">
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <Link to={node.fields.slug} key={node.id}>
-            <div className="each-article">
-              <Img fixed={node.frontmatter.thumbnail.childImageSharp.fixed} />
+          <div className="each-article">
+            <Img fixed={node.frontmatter.thumbnail.childImageSharp.fixed} />
+            <Link to={node.fields.slug} key={node.id}>
               <h3>{node.frontmatter.title}</h3>
-            </div>
-          </Link>
+            </Link>
+          </div>
         ))}
       </div>
     </Layout>
