@@ -2,15 +2,11 @@
 @import "../base/mixins";
 
 header {
-  padding: $container-padding;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   nav {
-    flex: 0 1 $site-width;
-    padding: $container-padding;
-    max-width: 90%;
+    max-width: $site-width;
+    height: 160px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
