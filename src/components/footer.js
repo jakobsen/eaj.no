@@ -29,7 +29,7 @@ export default () => {
           href="https://gatsbyjs.org"
           title="Built with Gatsby"
           target="_blank"
-          rrel="noopener noreferrer"
+          rel="noopener noreferrer"
         >
           <img src={Gatsby} alt="Gatsby" />
         </a>
@@ -37,7 +37,7 @@ export default () => {
           href="https://en.wikipedia.org/wiki/Trondheim"
           title="Made in Trondheim "
           target="_blank"
-          rrel="noopener noreferrer"
+          rel="noopener noreferrer"
         >
           <img src={Trondheim} alt="Trondheim" />
         </a>
