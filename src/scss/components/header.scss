@@ -1,5 +1,4 @@
 @import "../base/variables";
-@import "../base/mixins";
 
 header {
   width: 100%;
@@ -21,14 +20,34 @@ header {
       font-size: 1.2rem;
     }
 
-    a {
-      text-decoration: none;
-      @include layout-link;
+    .links {
+      a {
+        color: rgba($text-color, 0.5);
+        padding: 5px;
+        border-radius: 5px;
+        &:hover {
+          color: $text-color;
+          background-color: rgba($text-color, 0.1);
+        }
+      }
     }
     .brand {
       a {
         display: flex;
         align-items: center;
+        padding: 0;
+        text-decoration: none;
+
+        h2 {
+          color: #071125;
+          &:hover {
+            background: linear-gradient(90deg, #071125, #ad232f);
+            background-clip: border-box;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            box-decoration-break: none;
+          }
+        }
       }
       .logo {
         display: inline-block;
