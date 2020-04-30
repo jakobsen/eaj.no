@@ -1,5 +1,9 @@
 @import "../base/variables";
 
+body {
+  transition: all 0.2s linear;
+}
+
 .container {
   max-width: $site-width;
   margin-left: auto;
