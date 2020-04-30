@@ -1,20 +1,25 @@
 import Typography from "typography"
 
 const typography = new Typography({
-  baseFontSize: "18px",
-  baseLineHeight: 1.666,
+  headerColor: "#071125",
+  baseLineHeight: 1.6,
   googleFonts: [
     {
       name: `Zilla Slab`,
       styles: [`400`, `400i`, `700`, `700i`],
     },
     {
-      name: `Lato`,
-      styles: [`300`, `300i`, `400`, `400i`, `700`, `700i`],
+      name: "Open Sans",
+      styles: ["400", "400i", "700", "700i"],
+    },
+    {
+      name: "Fira Mono",
+      styles: ["400", "500", "700"],
     },
   ],
   headerFontFamily: ["Zilla Slab", "Georgia", "serif"],
-  bodyFontFamily: ["Lato", "sans-serif"],
+  bodyFontFamily: ["Open Sans", "sans-serif"],
+  bodyWeight: 400,
 })
 
 export default typography
