@@ -9,3 +9,11 @@
 .site-wrapper {
   padding: 0 40px;
 }
+
+a {
+  text-decoration: none;
+  color: scale-color(#071125, $lightness: 40%);
+  &:hover {
+    text-decoration: underline;
+  }
+}
