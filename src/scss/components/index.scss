@@ -1,11 +1,6 @@
 @import "../base/variables";
 
 .articles-list {
-  a {
-    &:last-child .each-article {
-      background-color: red;
-    }
-  }
   .each-article {
     display: grid;
     grid-template-columns: 60px 2fr auto;
@@ -15,6 +10,9 @@
     &:hover {
       background-color: rgba($text-color, 0.05);
       border-radius: 5px;
+    }
+    &:last-child {
+      border-bottom: none;
     }
   }
   h3 {
