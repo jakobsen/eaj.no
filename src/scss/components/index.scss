@@ -15,6 +15,9 @@
       border-bottom: none;
     }
   }
+  a h3 {
+    color: scale-color($color: $header-color, $lightness: 50%);
+  }
   h3 {
     margin: 0;
   }
