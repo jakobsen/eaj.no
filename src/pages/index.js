@@ -10,7 +10,31 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title="Learning to code on the internet" />
-      <h3>All articles</h3>
+      <h1>Hallaien! 👋</h1>
+      <div className="lead">
+        <p>
+          I'm Erik. I study math, love to cook, and like to learn about
+          programming and the web in my free time.
+        </p>
+        <p>
+          This page is a collection of articles I write as I'm learning about
+          the subject matter. I hope they can be helpful to you as well. All
+          source code is available on{" "}
+          <a
+            href="https://github.com/jakobsen"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Github
+          </a>
+          .
+        </p>
+        <p>
+          If you want to get in touch, send me an{" "}
+          <a href="mailto:hello@eaj.no">e-mail</a>.
+        </p>
+      </div>
+      <h2>All articles</h2>
       <div className="articles-list">
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div className="each-article">

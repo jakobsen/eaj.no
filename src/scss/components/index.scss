@@ -1,4 +1,13 @@
 @import "../base/variables";
+h1 {
+  font-size: 3rem;
+}
+.lead {
+  margin-bottom: 50px;
+}
+h2 {
+  font-size: 2rem;
+}
 
 .articles-list {
   .each-article {
