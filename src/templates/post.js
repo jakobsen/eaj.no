@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import "../scss/components/article.scss"
+require(`katex/dist/katex.min.css`)
 
 class PostTemplate extends React.Component {
   render() {

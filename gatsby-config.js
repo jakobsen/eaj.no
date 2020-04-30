@@ -63,6 +63,7 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-plugin-sharp`,
+          `gatsby-remark-katex`,
           {
             resolve: `gatsby-remark-images`,
             options: {
