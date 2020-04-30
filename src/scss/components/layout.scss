@@ -1,0 +1,11 @@
+@import "../base/variables";
+
+.container {
+  max-width: $site-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-wrapper {
+  padding: 0 40px;
+}
