@@ -8,7 +8,6 @@ import "../scss/components/footer.scss"
 export default () => {
   return (
     <footer className="footer container">
-      <div>Contact me.</div>
       <div className="footer-links">
         <a
           href="https://github.com/jakobsen"
