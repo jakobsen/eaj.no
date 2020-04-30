@@ -1,0 +1,17 @@
+@import "./code.scss";
+
+article {
+  font-size: 1.05rem;
+  margin: 0 2rem;
+}
+
+.article-header {
+  display: grid;
+  align-items: end;
+  grid-template-columns: 2fr 150px;
+  h1 {
+    font-size: 2.6rem;
+    margin-bottom: 0;
+  }
+  margin-bottom: 100px;
+}

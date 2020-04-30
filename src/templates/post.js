@@ -3,6 +3,7 @@ import Layout from "./layout"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
+import "../scss/components/article.scss"
 
 class PostTemplate extends React.Component {
   render() {
@@ -19,11 +20,13 @@ class PostTemplate extends React.Component {
           image={image}
           pathname={this.props.location.pathname}
         />
-        <div className="article-header">
-          <h1>{post.frontmatter.title}</h1>
-          <Img fixed={post.frontmatter.thumbnail.childImageSharp.fixed} />
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <article>
+          <div className="article-header">
+            <h1>{post.frontmatter.title}</h1>
+            <Img fixed={post.frontmatter.thumbnail.childImageSharp.fixed} />
+          </div>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </article>
       </Layout>
     )
   }
