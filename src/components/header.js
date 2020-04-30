@@ -8,15 +8,20 @@ import moon from "../images/dark-mode.svg"
 class Header extends React.Component {
   constructor(props) {
     super(props)
+    const userLight = JSON.parse(localStorage.getItem("light"))
     this.handleClick = this.handleClick.bind(this)
     this.state = {
-      darkMode: true,
+      darkMode: userLight ? false : true,
       imageSrc: sun,
+    }
+    if (this.state.darkMode) {
+      document.querySelector("body").classList.add("dark")
     }
   }
 
   handleClick() {
     this.setState({ darkMode: !this.state.darkMode })
+    localStorage.setItem("light", JSON.stringify(this.state.darkMode))
     const body = document.querySelector("body")
     body.classList.toggle("dark")
     console.log(body.classList.contains("dark"))
