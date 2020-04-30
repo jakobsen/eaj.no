@@ -1,0 +1,30 @@
+@import "../base/variables";
+
+.articles-list {
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+    &:last-child .each-article {
+      border-bottom: none;
+    }
+  }
+  .each-article {
+    display: grid;
+    grid-template-columns: 60px 1fr 60px;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    border-bottom: solid 1px rgba($text-color, 0.1);
+    &:hover {
+      background-color: rgba($text-color, 0.05);
+      border-radius: 5px;
+    }
+  }
+  h3 {
+    margin: 0;
+  }
+  img {
+    position: relative;
+    margin: 0;
+  }
+}

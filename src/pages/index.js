@@ -3,20 +3,20 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../templates/layout"
 import SEO from "../components/seo"
-
 import Img from "gatsby-image"
+import "../scss/components/index.scss"
 
 export default ({ data }) => {
   return (
     <Layout>
       <SEO title="Learning to code on the internet" />
+      <h3>All articles</h3>
       <div className="articles-list">
-        <h3>All articles</h3>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <Link to={node.fields.slug} key={node.id}>
             <div className="each-article">
               <Img fixed={node.frontmatter.thumbnail.childImageSharp.fixed} />
-              <h2>{node.frontmatter.title}</h2>
+              <h3>{node.frontmatter.title}</h3>
             </div>
           </Link>
         ))}
