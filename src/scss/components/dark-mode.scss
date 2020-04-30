@@ -1,0 +1,55 @@
+body.dark {
+  background-color: #222222;
+  color: #f0f0f0;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #f0f0f0;
+  }
+  a {
+    color: #7ac1ff;
+  }
+
+  header {
+    .brand {
+      a {
+        h2 {
+          color: #f0f0f0;
+          &:hover {
+            background: linear-gradient(90deg, #f0f0f0, #ad232f);
+            background-clip: border-box;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            box-decoration-break: none;
+          }
+        }
+      }
+    }
+  }
+
+  .articles-list {
+    .each-article {
+      border-bottom: solid 1px rgba(#f0f0f0, 0.5);
+      &:hover {
+        background-color: rgba(#f0f0f0, 0.1);
+        border-radius: 5px;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    a h3 {
+      color: #7ac1ff;
+    }
+    h3 {
+      margin: 0;
+    }
+    img {
+      position: relative;
+      margin: 0;
+    }
+  }
+}

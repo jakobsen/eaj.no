@@ -39,5 +39,18 @@ header {
         margin-right: 15px;
       }
     }
+    .links {
+      button {
+        width: 30px;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        padding: 0;
+        img {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
   }
 }

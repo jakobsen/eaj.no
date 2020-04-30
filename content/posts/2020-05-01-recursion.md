@@ -24,3 +24,10 @@ The precise meaning of $n$ is highly dependent on the kind of problem. It could 
 ## In it for the long run
 
 What about the $\mathrm{O}$ part of $\mathrm{O}(n)$?
+
+Let's try to work it out with some code.
+
+```py
+def hello_there(name):
+  print(f"Hi {name}!")
+```

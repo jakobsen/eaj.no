@@ -42,9 +42,9 @@ export default ({ data }) => {
       <h2>All articles</h2>
       <div className="articles-list">
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div className="each-article">
+          <div className="each-article" key={node.id}>
             <Img fixed={node.frontmatter.thumbnail.childImageSharp.fixed} />
-            <Link to={node.fields.slug} key={node.id}>
+            <Link to={node.fields.slug}>
               <h3>{node.frontmatter.title}</h3>
             </Link>
           </div>
