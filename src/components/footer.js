@@ -13,7 +13,7 @@ export default () => {
           href="https://github.com/jakobsen"
           title="See the source on GitHub"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <img src={Octocat} alt="GitHub" />
         </a>
@@ -21,7 +21,7 @@ export default () => {
           href="https://netlify.com"
           title="Hosted with Netlify"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <img src={Netlify} alt="Netlify" />
         </a>
@@ -29,7 +29,7 @@ export default () => {
           href="https://gatsbyjs.org"
           title="Built with Gatsby"
           target="_blank"
-          rel="noreferrer"
+          rrel="noopener noreferrer"
         >
           <img src={Gatsby} alt="Gatsby" />
         </a>
@@ -37,7 +37,7 @@ export default () => {
           href="https://en.wikipedia.org/wiki/Trondheim"
           title="Made in Trondheim "
           target="_blank"
-          rel="noreferrer"
+          rrel="noopener noreferrer"
         >
           <img src={Trondheim} alt="Trondheim" />
         </a>
