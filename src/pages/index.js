@@ -10,7 +10,12 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title="Learning to code on the internet" />
-      <h1>Hallaien! 👋</h1>
+      <h1>
+        Hallaien!{" "}
+        <span role="img" aria-label="wave">
+          👋
+        </span>
+      </h1>
       <div className="lead">
         <p>
           I'm Erik. I study math, love to cook, and like to learn about
