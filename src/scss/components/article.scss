@@ -10,7 +10,13 @@ article {
   grid-template-columns: 2fr 150px;
   h1 {
     font-size: 2.6rem;
+    margin-bottom: 1rem;
+  }
+  h4 {
     margin-bottom: 0;
   }
-  margin-bottom: 100px;
+  img {
+    margin: 0;
+  }
+  margin-bottom: 80px;
 }

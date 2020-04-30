@@ -23,7 +23,10 @@ class PostTemplate extends React.Component {
         />
         <article>
           <div className="article-header">
-            <h1>{post.frontmatter.title}</h1>
+            <div className="frontmatter">
+              <h1>{post.frontmatter.title}</h1>
+              <h4 className="date">{post.frontmatter.date}</h4>
+            </div>
             <Img fixed={post.frontmatter.thumbnail.childImageSharp.fixed} />
           </div>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -49,6 +52,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        date(formatString: "MMM D, YYYY")
         thumbnail {
           childImageSharp {
             fixed(width: 120, height: 120) {
