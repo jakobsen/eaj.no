@@ -1,13 +1,26 @@
 @import "../base/variables";
 @import "../base/mixins";
-footer {
+
+.footer {
+  width: 100%;
+  height: 100%;
   display: flex;
-  padding: $container-padding;
-  footer-container {
-    flex: 0 1 $site-width;
-  }
-  svg {
-    @include layout-link;
-    width: 18px;
+  justify-content: space-between;
+  align-items: center;
+  .footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    a {
+      display: block;
+      width: 24px;
+      margin: 24px;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    svg {
+      width: 100%;
+    }
   }
 }
