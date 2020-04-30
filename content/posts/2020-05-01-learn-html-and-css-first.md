@@ -1,7 +1,7 @@
 ---
 title: "Why you should learn plain HTML and CSS first"
 author: "Erik André Jakobsen"
-date: "2020-05-02"
+date: "2020-04-30"
 thumbnail: "../thumbnails/html5-logo.png"
 ---
 
