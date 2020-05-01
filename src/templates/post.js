@@ -8,7 +8,7 @@ require(`katex/dist/katex.min.css`)
 
 class PostTemplate extends React.Component {
   render() {
-    const regex = /eaj-no(\/.*)/gm
+    const regex = /content\/posts\/(.*)/gm
     const post = this.props.data.markdownRemark
     const relativePath = regex.exec(post.fileAbsolutePath)[1]
     const siteTitle = this.props.data.site.siteMetadata.title
@@ -30,7 +30,7 @@ class PostTemplate extends React.Component {
               <h4 className="date">{post.frontmatter.date}</h4>
               <h4>
                 <a
-                  href={`https://github.com/jakobsen/eaj.no/blob/master${relativePath}`}
+                  href={`https://github.com/jakobsen/eaj.no/blob/master/content/posts/${relativePath}`}
                 >
                   <span role="img" aria-label="pencil">
                     ✏️
