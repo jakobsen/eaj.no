@@ -1,75 +1,73 @@
-import React from "react"
+import React, { useState, useLayoutEffect } from "react"
 import logo from "../images/icon.png"
 import { Link } from "gatsby"
 import "../scss/components/header.scss"
 import sun from "../images/light-mode.svg"
 import moon from "../images/dark-mode.svg"
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props)
-    const userLight = JSON.parse(localStorage.getItem("light"))
-    this.handleClick = this.handleClick.bind(this)
-    this.handleScroll = this.handleScroll.bind(this)
-    this.state = {
-      darkMode: userLight ? false : true,
-      imageSrc: sun,
+export default () => {
+  const [theme, setTheme] = useState(() => {
+    try {
+      const storedValue = window.localStorage.getItem("theme")
+      return storedValue ? JSON.parse(storedValue) : null
+    } catch (error) {
+      return null
     }
-    if (this.state.darkMode) {
-      document.querySelector("body").classList.add("dark")
-    }
-  }
-
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll)
-  }
-
-  handleClick() {
-    this.setState({ darkMode: !this.state.darkMode })
-    localStorage.setItem("light", JSON.stringify(this.state.darkMode))
+  })
+  useLayoutEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(theme))
     const body = document.querySelector("body")
-    body.classList.toggle("dark")
-    console.log(body.classList.contains("dark"))
-  }
-
-  handleScroll(e) {
-    const header = document.querySelector("header")
-    const threshold = 50
-    console.log(header)
-    if (window.scrollY >= threshold) {
-      header.classList.add("scroll")
+    if (theme === "dark") {
+      body.classList.add("dark")
+    } else {
+      body.classList.remove("dark")
     }
-    if (window.scrollY < threshold) {
-      header.classList.remove("scroll")
-    }
-  }
+  })
 
-  render() {
-    return (
-      <header>
-        <nav className="container">
-          <div className="brand">
-            <Link to="/">
-              <img src={logo} alt="" className="logo" />{" "}
-              <h2>Erik André Jakobsen</h2>
-            </Link>
-          </div>
-          <div className="links">
-            <button onClick={this.handleClick}>
-              <img
-                src={
-                  document.querySelector("body").classList.contains("dark")
-                    ? sun
-                    : moon
-                }
-                alt="light-mode"
-              />
-            </button>
-          </div>
-        </nav>
-      </header>
-    )
-  }
+  const [icon, setIcon] = useState(() => {
+    try {
+      const storedValue = window.localStorage.getItem("theme")
+      return storedValue && JSON.parse(storedValue) === "dark" ? sun : moon
+    } catch (error) {
+      return moon
+    }
+  })
+  useLayoutEffect(() => {
+    if (theme === "dark") {
+      setIcon(sun)
+    } else {
+      setIcon(moon)
+    }
+  }, [theme])
+
+  // Add scroll listener to window
+  useLayoutEffect(() => {
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY
+      const headerElement = document.querySelector("header")
+
+      if (scrollY >= 50) {
+        headerElement.classList.add("scroll")
+      } else {
+        headerElement.classList.remove("scroll")
+      }
+    })
+  })
+  return (
+    <header>
+      <nav className="container">
+        <div className="brand">
+          <Link to="/">
+            <img src={logo} alt="" className="logo" />{" "}
+            <h2>Erik André Jakobsen</h2>
+          </Link>
+        </div>
+        <div className="links">
+          <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+            <img src={icon} alt="light-mode" />
+          </button>
+        </div>
+      </nav>
+    </header>
+  )
 }
-
-export default Header
