@@ -10,7 +10,7 @@ export default ({ children }) => (
     style={{
       display: "flex",
       flexDirection: "column",
-      minHeight: "100vh",
+      minHeight: "calc(100vh - 190px)",
     }}
     className="site-wrapper"
   >

@@ -71,3 +71,11 @@ header {
     }
   }
 }
+
+@media (max-width: 860px) {
+  header {
+    nav {
+      padding: 0 30px;
+    }
+  }
+}
