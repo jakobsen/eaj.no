@@ -45,7 +45,7 @@ footer {
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 460px) {
   html {
     font-size: 90% !important;
   }
@@ -57,13 +57,18 @@ footer {
   }
 
   .article-header {
-    grid-template-columns: 2fr 70px !important;
+    grid-template-columns: 1fr !important;
     margin-bottom: 40px !important;
+
+    .frontmatter {
+      order: 2;
+    }
     .gatsby-image-wrapper {
       width: 60px !important;
       height: 60px !important;
       vertical-align: center;
-      align-self: center;
+      align-self: top;
+      margin-bottom: 1rem;
     }
 
     h1 {
