@@ -19,12 +19,16 @@ export default ({ data }) => {
         </h1>
         <div className="lead">
           <p>
-            I'm Erik. I study math, love to cook, and like to learn about
-            programming and the web in my free time.
+            I'm Erik. I study math, I'm often wearing my{" "}
+            <a href="https://en.wikipedia.org/wiki/Mariusgenser">
+              Mariusgenser
+            </a>
+            , and like to learn about programming and the web in my free time.
           </p>
           <p>
-            This page is a collection of articles I write as I learn. I hope
-            they can be helpful to you as well. Source code is available on{" "}
+            This page is a collection of articles and tutorials I write as I
+            learn. I hope they can be helpful to you as well. Source code is
+            available on{" "}
             <a
               href="https://github.com/jakobsen"
               target="_blank"

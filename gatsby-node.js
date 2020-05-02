@@ -5,7 +5,6 @@ const lodash = require(`lodash`)
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
-    console.log(node)
     const slug = `/${lodash.kebabCase(node.frontmatter.title)}`
     createNodeField({
       node,
