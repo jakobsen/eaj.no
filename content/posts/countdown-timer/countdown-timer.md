@@ -111,22 +111,29 @@ This is the complete HTML file:
 </html>
 ```
 
-I'll the site a dark background and make the text white. I also want the counter to be centered on the page, both vertically and horizontally. To achieve this I give the body a height, make it a flexbox, and use both the `css›justify-content` and `css›align-items` properties. The line `css›box-sizing: border-box;`ensures that any `border` and `padding` will be included when the browser calculates the height and width of an element.
+We'll give the site a dark background and make the text white. We want the counter to be centered on the page, both vertically and horizontally. To achieve this, give the body a height, make it a flexbox, and use both the `css›justify-content` and `css›align-items` properties. We also set `css›margin: 0` so we don't get a scrollbar in some browsers.
+
+We use the universal selector `css›*` and apply `css›box-sizing: border-box;` to ensure that any `border` and `padding` will be included when the browser calculates the height and width of an element.
 
 ```css:title=style.css
-body {
+* {
   box-sizing: border-box;
+}
+
+body {
   color: #fefefe;
   background-color: #222;
+  margin: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
 }
 ```
 
-I'd like to have the different tickers in a single row, with equal spacing between them. Again, flexbox is my preferred way of doing it.
+We want the different tickers in a single row, with equal spacing between them. Again, flexbox is my preferred way of doing it.
 
 ```css:title=style.css
 .countdown {
@@ -136,7 +143,7 @@ I'd like to have the different tickers in a single row, with equal spacing betwe
 }
 ```
 
-Finally, I'll just add some rules so that the boxes don't change in width when the numbers tick down, center the text, and set some font sizes.
+Finally, we'll add some rules so that the boxes don't change in width when the numbers tick down, center the text, and set some font sizes.
 
 ```css:title=style.css
 .box {
@@ -158,10 +165,14 @@ Finally, I'll just add some rules so that the boxes don't change in width when t
 The complete CSS file is now
 
 ```css:title=style.css
-body {
+* {
   box-sizing: border-box;
+}
+
+body {
   color: #fefefe;
   background-color: #222;
+  margin: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
