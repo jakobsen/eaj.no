@@ -69,7 +69,7 @@ If you have seen examples of big $\mathrm{O}$ in the wild, you might have notice
 It is always something like $\mathrm{O}(n^2)$, never something more complicated like $\mathrm{O}(2n^2 + 3n + 2)$.
 This is a feature, not a bug.
 Because we only care about growth, we can drop things that don't influence this as the input to the functions become large.
-Take another look at the above input to $\mathrm{O}$, which was $2n^2 + 3n + 2$. Consider what happens to each term if we double $n$. The last term, $2$, doesn't grow at all.
+Take another look at the above input to $\mathrm{O}$: $2n^2 + 3n + 2$. Consider what happens to each term if we double $n$. The last term, $2$, doesn't grow at all.
 The second term, $3n$ will double in size.
 The first term, $2n^2$, will quadruple.
 As $n$ gets very large, this means the first term will completely dominate, and the function will "grow like" $n^2$.
@@ -114,7 +114,7 @@ For a similar reason, combining two algorithms where one is $\mathrm{O}(n^3)$ an
 
 ## Space-time
 
-Even though I have only referred to running times so far, big O notation can be used to describe any mathematical function. Another popular use for the tool in computer science is for classifying not only how long it takes, but also how much memory it requires.
+Even though I have only referred to running times so far, big O notation can be used to describe any mathematical function. Another popular use for the tool in computer science is for classifying not only how long an algorithm takes, but also how much memory it requires.
 The former is referred to as time complexity, whilst the latter is called space complexity.
 I won't go any further into it here, as the rules for the notation itself are exactly the same.
 
