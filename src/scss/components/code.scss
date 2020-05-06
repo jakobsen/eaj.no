@@ -4,7 +4,9 @@ code[class*="language-"],
 pre[class*="language-"] {
   color: black;
   background: none;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  border-radius: 5px;
+  font-family: "Source Code Pro", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
   font-size: 1em;
   text-align: left;
   white-space: pre;
@@ -136,7 +138,27 @@ pre[class*="language-"] {
   cursor: help;
 }
 
+.gatsby-code-title {
+  background-color: scale-color(#f5f2f0, $lightness: -10%);
+  font-size: 0.88rem;
+  padding: 5px;
+  padding-left: 10px;
+  margin-bottom: -10px;
+  z-index: 2;
+  position: relative;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #777;
+  font-family: "Source Code Pro", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
+}
+
 .dark {
+  .gatsby-code-title {
+    background-color: scale-color(#111, $lightness: -10%);
+    color: #aaa;
+  }
+
   /* PrismJS 1.20.0
 https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript */
   /**
@@ -149,7 +171,6 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
   pre[class*="language-"] {
     color: #ccc;
     background: none;
-    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     font-size: 1em;
     text-align: left;
     white-space: pre;
@@ -260,4 +281,8 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
   .token.inserted {
     color: green;
   }
+}
+
+.gatsby-highlight + h2 {
+  margin-top: 30px;
 }
