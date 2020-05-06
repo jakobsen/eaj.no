@@ -11,11 +11,11 @@ Let's make one with JavaScript.
 
 The inspiration for this came from a Norwegian news article counting down the days, hours, minutes and seconds until [bars were allowed to reopen after the COVID-19 lockdown](https://www.nrk.no/osloogviken/oslo-apner-skjenkingen-1.15001011).
 
-You can see a [live demo](https://jakobsen.github.io/countdown-timer/) of what we'll be making, counting down until new year's eve. The source code is as always available on [Github](https://github.com/jakobsen/countdown-timer/). Note that the code is slightly modified to automatically set the correct year, but it is otherwise identical.
+You can see a [live demo](https://jakobsen.github.io/countdown-timer/) of what we'll be making, counting down until new year's eve. The source code is as always available on [Github](https://github.com/jakobsen/countdown-timer/). Note that the code is slightly modified to automatically set the correct year, but it is otherwise identical to what we'll write in this post.
 
 ## Set up the project
 
-Make a folder for your project, and create three files. I'll do it using the terminal, you can of course do it however you want:
+Make a folder for your project, and create three files. I'll do it using the terminal, you can of course do it however you want.
 
 ```shell
 mkdir countdown-timer
