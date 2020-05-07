@@ -49,7 +49,7 @@ For instance, consider the following plots:
 
 ![Example of asymptotic runtime differences](./asymptotic_example.png)
 
-Even though function $A$ is smaller than function $B$ when the problem isn't very big, this changes very quickly as the problem size increases. If your were implementing some algorithm where you don't know the size of the problem in advance, you would want to go for function $B$.
+Even though function $A$ is smaller than function $B$ when the problem isn't very big, this changes very quickly as the problem size increases. If you were implementing some algorithm where you don't know the size of the problem in advance, you would want to go for function $B$.
 
 This is probably a good time to introduce some friends of $\mathrm{O}$: Omega $\Omega$, and Theta $\Theta$.
 
