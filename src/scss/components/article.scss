@@ -32,6 +32,11 @@ blockquote {
   margin-bottom: 1.6rem;
   background-color: scale-color($color: $header-color, $lightness: 98%);
   border-left: 5px solid scale-color($color: $header-color, $lightness: 50%);
+
+  &.important {
+    background-color: scale-color($color: #a70222, $lightness: 90%);
+    border-left: 5px solid scale-color($color: #a70222, $lightness: 50%);
+  }
 }
 
 .dark {
@@ -42,5 +47,10 @@ blockquote {
     margin-bottom: 1.6rem;
     background-color: scale-color($color: #051122, $lightness: 20%);
     border-left: 5px solid scale-color($color: #051122, $lightness: 40%);
+
+    &.important {
+      background-color: scale-color($color: #a70222, $lightness: -15%);
+      border-left: 5px solid scale-color($color: #a70222, $lightness: 10%);
+    }
   }
 }
