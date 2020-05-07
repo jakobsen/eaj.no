@@ -20,7 +20,7 @@ This is know as the running time of the algorithm.
 You might think that we could just use normal units of time for this, like saying how long it takes in milliseconds.
 However, this depends upon more than just the algorithm: What hardware are we running on?
 What language is it written in? How is the input encoded?
-Saying that computing a value takes 20&nbsp;ms on a supercomputer isn't very when I'm on a laptop.
+Saying that computing a value takes 20&nbsp;ms on a supercomputer isn't very helpful when I'm on a laptop.
 We want a measure that is independent of which computer we have, and only depends on the algorithm itself.
 
 The solution is to count operations.
