@@ -5,6 +5,9 @@ date: "2020-05-02"
 thumbnail: "../../thumbnails/theta.png"
 ---
 
+<blockquote class="important"> <strong>Update 7 May:</strong> As <a href="https://www.reddit.com/r/programming/comments/germth/a_guide_to_big_o_notation/fprpnl6?utm_source=share&utm_medium=web2x">pointed out by the user quicknir on Reddit</a>, an earlier version version of this article had some misleading statements. These have been corrected.
+</blockquote>
+
 You have probably come across big O notation before. Maybe you have read that merge sort is better than insertion sort because merge sort is $O(n \log{n})$ compared to insertion sort, which is $O(n^2)$. In this article, you'll understand what this means, and why this makes merge sort the better algorithm.
 
 > ### Prerequisites
@@ -43,7 +46,7 @@ Don't worry, we'll get into the difference between $T(n)$ and $\mathrm{O}(n)$ ne
 
 ## In it for the long run
 
-The $\mathrm{O}$ part of $\mathrm{O}(n)$ indicates that we aren't very concerned about specific values of operations. We are mainly concerned with how this number of operations grows as $n$ grows larger. In fact, $\mathrm{O}(n)$ isn't just _one_ function, it describes a family of functions. A function $T(n)$ is $\mathrm{O}(n)$ if $T(n)$ grows no faster than the function $n$ does as $n$ gets very large. If it grows faster than $n$ but no faster than $n^2$, it is $\mathrm{O}(n^2)$. The argument to big $\mathrm{O}$ can be any function.
+The $\mathrm{O}$ part of $\mathrm{O}(n)$ indicates that we aren't very concerned about specific values of operations. We are mainly concerned with how this number of operations grows as $n$ grows larger. In fact, $\mathrm{O}(n)$ isn't just _one_ function, it describes a family of functions. A function $T(n)$ is $\mathrm{O}(n)$ if $T(n)$ grows no faster than the function $n$ does as $n$ gets very large. If it grows no faster than $n^2$, it is $\mathrm{O}(n^2)$. Note that if a function is $\mathrm{O}(n)$, it is $\mathrm{O}(n^2)$; if it grows no faster than $n$, it certainly grows no faster than $n^2$ as well. However, we usually try to pick the tightest boundary possible: That is, we try to pick the slowest-growing function possible as an argument for $\mathrm{O}$. The argument to big $\mathrm{O}$ can be any function.
 
 For instance, consider the following plots:
 
@@ -61,7 +64,11 @@ This is all a bit hand-wavy, and the mathematical definitions of $\mathrm{O}$, $
 For our purposes this doesn't really matter.
 The important part is that they are all about how fast a function grows.
 
-> A common misconception is that big $\mathrm{O}$ will always refer to the worst case of an algorithm, and $\Omega$ will always refer to the best case. This is not true: The running time of an algorithm may be described with whichever of big $\mathrm{O}$, $\Theta$ and $\Omega$ is most fitting. If we don't know how slow an algorithm might get, but we know that it's never faster than $n^2$, we would use $\Omega(n^2)$.
+## At least it can't get any worse
+
+A common misconception is that big $\mathrm{O}$ will always refer to the worst case of an algorithm, and $\Omega$ will always refer to the best case. This is not true: The running time of an algorithm may be described with whichever of big $\mathrm{O}$, $\Theta$ and $\Omega$ is most fitting. If we don't know how slow an algorithm might get, but we know that it's never faster than $n^2$, we would use $\Omega(n^2)$.
+
+If you have the knowledge required to use the $\Theta$ notation, do it! Big $\mathrm{O}$ only serves to provide an upper bound. The true growth may be much slower than what $\mathrm{O}$ tells us.
 
 ## Keep it simple
 
@@ -140,6 +147,7 @@ def sum_of_first_two_elements(arr):
 
 In the above function, we are always doing the same thing: Get the first two elements, add them together, and return the result.
 No matter how long the array is, this won't change (unless the array only contains one element and we get an error, but let's ignore that).
+This means that the best, average, and worst case are all the same.
 The runtime is $\Theta(1)$.
 ![](./sum_of_first_two_elements.png)
 
@@ -177,7 +185,12 @@ If any element matches the value we are looking for, the function returns the cu
 If we go through the whole array without finding the correct value, we return `py›None`, indicating the value isn't in the array.
 This means that we might get to quit early when we are looking for something that happens to be in the front of the array, or we might be unlucky and look for something that isn't there.
 In this case, we would have to look at all elements, and if the length of the array doubles, we have to look at twice as many elements.
-The runtime is $\mathrm{O}(n)$.
+
+This algorithm have different running times for the best and worst case scenarios. In the worst case, the value isn't in the array, and we have to check all $n$ elements. Then the running time is $\Theta(n)$. In the best case our value is the first element, and the running time is $\Theta(1)$.
+
+If we want to encapsulate both of these runtimes using a single notation, we'll have to use $\mathrm{O}(n)$: The runtime might grow like $n$ at most, but it might be slower as well. Using $\Theta(n)$ for the general runtime would be incorrect, as in some cases, the runtime doesn't grow at all for longer inputs.
+
+If we assume the value we are looking for is always in the array, and it's equally likely to be anywhere in the array, we'd expect to have to go through half of the array on average—half of the time we'd find it earlier, half of the time we'd have to go longer. This means the runtime would be approximately $T(n) = n/2$, but remember that we don't care about constants! The average runtime is still $\Theta(n)$.
 
 The plot below shows three scenarios: One where `py›value` is always the first in the list, one where it is in the middle, and finally, one where it isn't there at all.
 
