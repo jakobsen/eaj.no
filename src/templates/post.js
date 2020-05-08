@@ -1,20 +1,23 @@
-import React from "react"
-import Layout from "./layout"
-import Img from "gatsby-image"
-import SEO from "../components/seo"
-import { graphql } from "gatsby"
-import "../scss/components/article.scss"
-require(`katex/dist/katex.min.css`)
+import React from "react";
+import Layout from "./layout";
+import Img from "gatsby-image";
+import SEO from "../components/seo";
+import { MDXProvider } from "@mdx-js/react";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { graphql } from "gatsby";
+import "../scss/components/article.scss";
+require(`katex/dist/katex.min.css`);
 
 class PostTemplate extends React.Component {
   render() {
-    const regex = /content\/posts\/(.*)/gm
-    const post = this.props.data.markdownRemark
-    const relativePath = regex.exec(post.fileAbsolutePath)[1]
-    const siteTitle = this.props.data.site.siteMetadata.title
+    // Get the filename for linking to GitHub
+    const regex = /content\/posts\/(.*)/gm;
+    const post = this.props.data.mdx;
+    const relativePath = regex.exec(post.fileAbsolutePath)[1];
+    const siteTitle = this.props.data.site.siteMetadata.title;
     const image = post.frontmatter.thumbnail
       ? post.frontmatter.thumbnail.childImageSharp.rezise
-      : null
+      : null;
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -41,14 +44,16 @@ class PostTemplate extends React.Component {
             </div>
             <Img fixed={post.frontmatter.thumbnail.childImageSharp.fixed} />
           </div>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <MDXProvider>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </MDXProvider>
         </article>
       </Layout>
-    )
+    );
   }
 }
 
-export default PostTemplate
+export default PostTemplate;
 
 export const query = graphql`
   query($slug: String!) {
@@ -58,9 +63,9 @@ export const query = graphql`
         author
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
-      html
+      body
       fileAbsolutePath
       frontmatter {
         title
@@ -75,4 +80,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
