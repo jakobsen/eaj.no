@@ -59,7 +59,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-transformer-mdx`,
       options: {
         plugins: [
           `gatsby-plugin-sharp`,
@@ -95,4 +95,4 @@ module.exports = {
       },
     },
   ],
-}
+};
