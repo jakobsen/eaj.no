@@ -1,10 +1,10 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { Link, graphql } from "gatsby";
 
-import Layout from "../templates/layout"
-import SEO from "../components/seo"
-import Img from "gatsby-image"
-import "../scss/components/index.scss"
+import Layout from "../templates/layout";
+import SEO from "../components/seo";
+import Img from "gatsby-image";
+import "../scss/components/index.scss";
 
 export default ({ data }) => {
   return (
@@ -48,7 +48,7 @@ export default ({ data }) => {
         </div>
         <h2>All articles</h2>
         <div className="articles-list">
-          {data.allMarkdownRemark.edges.map(({ node }) => (
+          {data.allMdx.edges.map(({ node }) => (
             <div className="each-article" key={node.id}>
               <Img fixed={node.frontmatter.thumbnail.childImageSharp.fixed} />
               <Link to={node.fields.slug}>
@@ -59,12 +59,12 @@ export default ({ data }) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {
@@ -87,4 +87,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
