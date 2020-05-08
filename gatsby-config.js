@@ -59,9 +59,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-mdx`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        gatsbyRemarkPlugins: [
           `gatsby-plugin-sharp`,
           `gatsby-remark-katex`,
           {
