@@ -21,4 +21,4 @@ I learned how to make websites with the help of [Brad Traversy](https://www.udem
 
 The tutorials on [Gatsby's website](gatsbyjs.org/) were indispensable in making my site.
 
-Code syntax is rendered with [Prism.js](https://prismjs.com/), using the default theme for light mode and the Tomorrow Night theme for dark mode.
+Code syntax is rendered with [Prism.js](https://prismjs.com/).
