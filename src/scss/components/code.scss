@@ -14,7 +14,6 @@ pre[class*="language-"] {
   word-break: normal;
   word-wrap: normal;
   line-height: 1.5;
-
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
@@ -159,36 +158,38 @@ pre[class*="language-"] {
     color: #aaa;
   }
 
-  /* PrismJS 1.20.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript */
   /**
- * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
- * Based on https://github.com/chriskempson/tomorrow-theme
- * @author Rose Pritchard
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
  */
-
   code[class*="language-"],
   pre[class*="language-"] {
-    color: #ccc;
-    background: none;
-    font-size: 1em;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    line-height: 1.5;
-
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
+    color: #dcd9d9;
   }
 
+  pre[class*="language-"]::-moz-selection,
+  pre[class*="language-"] ::-moz-selection,
+  code[class*="language-"]::-moz-selection,
+  code[class*="language-"] ::-moz-selection {
+    text-shadow: none;
+    background: #383e49;
+  }
+
+  pre[class*="language-"]::selection,
+  pre[class*="language-"] ::selection,
+  code[class*="language-"]::selection,
+  code[class*="language-"] ::selection {
+    text-shadow: none;
+    background: #9aa2b1;
+  }
+
+  @media print {
+    code[class*="language-"],
+    pre[class*="language-"] {
+      text-shadow: none;
+    }
+  }
   /* Code blocks */
   pre[class*="language-"] {
     padding: 1em;
@@ -198,7 +199,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
-    background: #2d2d2d;
+    background: #282c34;
   }
 
   /* Inline code */
@@ -209,67 +210,67 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
   }
 
   .token.comment,
-  .token.block-comment,
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    color: #999;
+    color: #5c6370;
   }
 
   .token.punctuation {
-    color: #ccc;
-  }
-
-  .token.tag,
-  .token.attr-name,
-  .token.namespace,
-  .token.deleted {
-    color: #e2777a;
-  }
-
-  .token.function-name {
-    color: #6196cc;
-  }
-
-  .token.boolean,
-  .token.number,
-  .token.function {
-    color: #f08d49;
-  }
-
-  .token.property,
-  .token.class-name,
-  .token.constant,
-  .token.symbol {
-    color: #f8c555;
+    color: #abb2bf;
   }
 
   .token.selector,
-  .token.important,
-  .token.atrule,
-  .token.keyword,
-  .token.builtin {
-    color: #cc99cd;
+  .token.tag {
+    color: #e06c75;
+  }
+
+  .token.property,
+  .token.boolean,
+  .token.number,
+  .token.constant,
+  .token.symbol,
+  .token.attr-name,
+  .token.deleted {
+    color: #d19a66;
   }
 
   .token.string,
   .token.char,
   .token.attr-value,
-  .token.regex,
-  .token.variable {
-    color: #7ec699;
+  .token.builtin,
+  .token.inserted {
+    color: #98c379;
   }
 
   .token.operator,
   .token.entity,
-  .token.url {
-    color: #67cdcc;
+  .token.url,
+  .language-css .token.string,
+  .style .token.string {
+    color: #56b6c2;
+  }
+
+  .token.atrule,
+  .token.keyword {
+    color: #c678dd;
+  }
+
+  .token.function {
+    color: #61afef;
+  }
+
+  .token.regex,
+  .token.important,
+  .token.variable {
+    color: #c678dd;
   }
 
   .token.important,
   .token.bold {
     font-weight: bold;
   }
+
   .token.italic {
     font-style: italic;
   }
@@ -278,11 +279,151 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
     cursor: help;
   }
 
-  .token.inserted {
-    color: green;
+  pre.line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
   }
+
+  pre.line-numbers > code {
+    position: relative;
+  }
+
+  .line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 0;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .line-numbers-rows > span {
+    pointer-events: none;
+    display: block;
+    counter-increment: linenumber;
+  }
+
+  .line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: #5c6370;
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+  }
+}
+
+.gatsby-highlight {
+  margin-bottom: 1.5rem;
 }
 
 .gatsby-highlight + h2 {
   margin-top: 30px;
+}
+
+.gatsby-highlight {
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+.gatsby-highlight pre[class*="language-"] {
+  -webkit-overflow-scrolling: touch;
+}
+.gatsby-highlight pre[class*="language-"]::before {
+  background: black;
+  border-radius: 0 0 0.25rem 0.25rem;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 0.025rem;
+  padding: 0.1rem 0.5rem;
+  position: absolute;
+  right: 1rem;
+  text-align: right;
+  text-transform: uppercase;
+  top: 0;
+}
+.gatsby-highlight pre[class="language-js"]::before {
+  content: "js";
+  background: #f7df1e;
+  color: #222;
+}
+
+.dark {
+  .gatsby-highlight pre[class="language-js"]::before {
+    background: #d8bd22;
+  }
+}
+
+.gatsby-highlight pre[class="language-py"]::before {
+  content: "py";
+  background: #2ca02c;
+  color: #fff;
+}
+
+.gatsby-highlight pre[class="language-jsx"]::before {
+  content: "jsx";
+  background: #56d5fa;
+  color: #222;
+}
+
+.gatsby-highlight pre[class="language-html"]::before {
+  content: "html";
+  background: #ef5a25;
+  color: #fff;
+}
+
+.gatsby-highlight pre[class="language-css"]::before {
+  content: "css";
+  background: #33a9dc;
+  color: #fff;
+}
+
+.gatsby-highlight pre[class="language-julia"]::before {
+  content: "jl";
+  background: #8a4ea9;
+  color: #fff;
+}
+
+// Line highlight
+
+.gatsby-highlight {
+  background-color: #fef9eb;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+  .gatsby-highlight-code-line {
+    background-color: #feb;
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid #f99;
+  }
+}
+
+.dark {
+  .gatsby-highlight {
+    background-color: #181821;
+    .gatsby-highlight-code-line {
+      background-color: #25253a;
+      border-left: 0.25em solid #cb8f5b;
+    }
+  }
+}
+
+.gatsby-highlight pre[class*="language-"] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
 }
