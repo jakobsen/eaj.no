@@ -1,9 +1,9 @@
-import React from "react"
-import Octocat from "../images/Octocat.png"
-import Netlify from "../images/netlify.svg"
-import Trondheim from "../images/Trondheim.svg"
-import Gatsby from "../images/Gatsby-Monogram.svg"
-import "../scss/components/footer.scss"
+import React from "react";
+import Octocat from "../images/Octocat.png";
+import Netlify from "../images/netlify.svg";
+import Twitter from "../images/twitter.svg";
+import Gatsby from "../images/Gatsby-Monogram.svg";
+import "../scss/components/footer.scss";
 
 export default () => {
   return (
@@ -34,14 +34,14 @@ export default () => {
           <img src={Gatsby} alt="Gatsby" />
         </a>
         <a
-          href="https://en.wikipedia.org/wiki/Trondheim"
-          title="Made in Trondheim "
+          href="https://twitter.com/eaj_no"
+          title="@eaj_no on Twitter"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={Trondheim} alt="Trondheim" />
+          <img src={Twitter} alt="Twitter" />
         </a>
       </div>
     </footer>
-  )
-}
+  );
+};

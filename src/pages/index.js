@@ -40,10 +40,8 @@ export default ({ data }) => {
           </p>
           <p>
             If you want to get in touch, send me an{" "}
-            <a href="mailto:hello@eaj.no">e-mail</a>!{" "}
-            <span role="img" aria-label="letter">
-              ✉️
-            </span>
+            <a href="mailto:hello@eaj.no">e-mail</a> or reach out on{" "}
+            <a href="https://twitter.com/eaj_no">Twitter</a>.
           </p>
         </div>
         <h2>All articles</h2>
