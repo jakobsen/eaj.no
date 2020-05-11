@@ -21,4 +21,4 @@ I learned how to make websites with the help of [Brad Traversy](https://www.udem
 
 The tutorials on [Gatsby's website](gatsbyjs.org/) were indispensable in making my site.
 
-Code syntax is rendered with [Prism.js](https://prismjs.com/).
+Code syntax is rendered with [Prism.js](https://prismjs.com/). I followed [Lekoarts' guide](https://www.lekoarts.de/en/blog/language-tabs-for-gatsbys-code-blocks) to add language flags to the code blocks.
