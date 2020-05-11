@@ -2,6 +2,24 @@
 @import "../base/variables";
 article {
   margin: 0 2rem;
+
+  ol {
+    list-style: none;
+    counter-reset: custom-counter;
+  }
+
+  ol li {
+    counter-increment: custom-counter;
+  }
+
+  ol li::before {
+    content: counter(custom-counter) ". ";
+    font-family: "Zilla Slab", "Lato", "Segoe UI", Tahoma, Geneva, Verdana,
+      sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #b10124;
+  }
 }
 
 .article-header {
@@ -34,12 +52,17 @@ blockquote {
   border-left: 5px solid scale-color($color: $header-color, $lightness: 50%);
 
   &.important {
-    background-color: scale-color($color: #a70222, $lightness: 90%);
-    border-left: 5px solid scale-color($color: #a70222, $lightness: 50%);
+    background-color: scale-color($color: #b10124, $lightness: 90%);
+    border-left: 5px solid scale-color($color: #b10124, $lightness: 50%);
   }
 }
 
 .dark {
+  article {
+    ol li::before {
+      color: #f98585;
+    }
+  }
   blockquote {
     width: 100%;
     padding: 0.5rem 1.6rem;
