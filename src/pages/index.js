@@ -11,12 +11,7 @@ export default ({ data }) => {
     <Layout>
       <SEO title="Learning to code on the internet" />
       <div className="container">
-        <h1>
-          Hallaien!{" "}
-          <span role="img" aria-label="wave">
-            👋
-          </span>
-        </h1>
+        <h1>Hallaien!</h1>
         <div className="lead">
           <p>
             I'm Erik. I study math, I'm often wearing my{" "}
