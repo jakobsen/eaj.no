@@ -50,7 +50,7 @@ class PostTemplate extends React.Component {
           <p style={{ fontSize: "0.8rem", marginTop: "100px" }}>
             Do you have feedback on this article? Let me know on{" "}
             <a
-              href="twitter.com/eaj_no"
+              href="https://twitter.com/eaj_no"
               target="_blank"
               rel="noopener noreferrer"
             >
