@@ -35,8 +35,7 @@ export default ({ data }) => {
           </p>
           <p>
             If you want to get in touch, send me an{" "}
-            <a href="mailto:hello@eaj.no">e-mail</a> or reach out on{" "}
-            <a href="https://twitter.com/eaj_no">Twitter</a>.
+            <a href="mailto:hello@eaj.no">e-mail</a>.
           </p>
         </div>
         <h2>All articles</h2>
