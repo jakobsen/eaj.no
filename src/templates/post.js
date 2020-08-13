@@ -48,15 +48,7 @@ class PostTemplate extends React.Component {
             <MDXRenderer>{post.body}</MDXRenderer>
           </MDXProvider>
           <p style={{ fontSize: "0.8rem", marginTop: "100px" }}>
-            Do you have feedback on this article? Let me know on{" "}
-            <a
-              href="https://twitter.com/eaj_no"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Twitter
-            </a>
-            .
+            Do you have feedback on this article? Feel free to send me a <a href="mailto:hei@eaj.no">mail</a>.
           </p>
         </article>
       </Layout>
