@@ -11,14 +11,10 @@ export default ({ data }) => {
     <Layout>
       <SEO title="Learning to code on the internet" />
       <div className="container">
-        <h1>Hallaien!</h1>
+        <h1>Hei.</h1>
         <div className="lead">
           <p>
-            I'm Erik. I study math, I'm often wearing my{" "}
-            <a href="https://en.wikipedia.org/wiki/Mariusgenser">
-              Mariusgenser
-            </a>
-            , and like to learn about programming and the web in my free time.
+            I'm Erik. I like to learn about programming and the web in my free time.
           </p>
           <p>
             This page is a collection of articles and tutorials I write as I
@@ -32,10 +28,6 @@ export default ({ data }) => {
               Github
             </a>
             .
-          </p>
-          <p>
-            If you want to get in touch, send me an{" "}
-            <a href="mailto:hello@eaj.no">e-mail</a>.
           </p>
         </div>
         <h2>All articles</h2>
